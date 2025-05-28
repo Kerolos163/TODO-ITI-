@@ -11,7 +11,54 @@ class GetStartScreen extends StatelessWidget {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsetsGeometry.symmetric(horizontal: 16),
-          child: Column(children: [SvgPicture.asset(Assets.assetsImgsLogo)]),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(Assets.assetsImgsLogo),
+                  SizedBox(width: 16),
+                  Text("Tasky", style: Theme.of(context).textTheme.titleLarge),
+                ],
+              ),
+              SizedBox(height: 108),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Welcome To Tasky ",
+                    style: Theme.of(context).textTheme.bodyLarge,
+                  ),
+                  SvgPicture.asset(Assets.assetsImgsWavingHand),
+                ],
+              ),
+              SizedBox(height: 8),
+              Text(
+                "Your productivity journey starts here.",
+                style: Theme.of(context).textTheme.bodyMedium,
+              ),
+              SizedBox(height: 24),
+              SvgPicture.asset(Assets.assetsImgsGetStartImage),
+              SizedBox(height: 28),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  "Full Name",
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ),
+              SizedBox(height: 8),
+              TextField(
+                style: TextStyle(fontSize: 20),
+                decoration: InputDecoration(hintText: 'e.g. Sarah Khalid'),
+              ),
+              SizedBox(height: 24),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text("Let’s Get Started"),
+              ),
+            ],
+          ),
         ),
       ),
     );
