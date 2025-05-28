@@ -11,7 +11,7 @@ class MyTasksScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: SizedBox(
-        height: 45,
+        height: 40,
         child: FloatingActionButton.extended(
           onPressed: () {},
           shape: RoundedRectangleBorder(
