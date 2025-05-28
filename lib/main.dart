@@ -15,6 +15,12 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Color(0XFF181818),
+        appBarTheme: AppBarTheme(
+          leadingWidth: 35,
+          backgroundColor: Color(0XFF181818),
+          titleTextStyle: TextStyle(color: Color(0XFFFFFCFC), fontSize: 20),
+          iconTheme: IconThemeData(color: Color(0XFFFFFCFC)),
+        ),
         textSelectionTheme: TextSelectionThemeData(
           cursorColor: Color(0XFF14B86B),
           selectionColor: Color.fromARGB(132, 20, 184, 108),
