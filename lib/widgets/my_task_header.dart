@@ -33,7 +33,10 @@ class MyTaskHeader extends StatelessWidget {
             ),
           ],
         ),
-        SvgPicture.asset(Assets.assetsImgsLight),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 20),
+          child: SvgPicture.asset(Assets.assetsImgsLight),
+        ),
       ],
     );
   }
