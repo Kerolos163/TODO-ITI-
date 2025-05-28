@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           selectionHandleColor: Color(0XFF14B86B),
         ),
         inputDecorationTheme: InputDecorationTheme(
-          hintStyle: TextStyle(color: Color(0xFF6D6D6D),fontSize: 18),
+          hintStyle: TextStyle(color: Color(0xFF6D6D6D), fontSize: 18),
           contentPadding: EdgeInsets.all(12),
           filled: true,
           fillColor: Color(0XFF282828),
@@ -45,6 +45,11 @@ class MyApp extends StatelessWidget {
           titleLarge: TextStyle(fontSize: 28, color: Colors.white),
           bodyLarge: TextStyle(fontSize: 24, color: Color(0XFFFFFCFC)),
           bodyMedium: TextStyle(fontSize: 16, color: Color(0XFFFFFCFC)),
+          labelMedium: TextStyle(
+            fontSize: 14,
+            color: Color(0XFFC6C6C6),
+            fontWeight: FontWeight.w300,
+          ),
         ),
       ),
       home: GetStartScreen(),

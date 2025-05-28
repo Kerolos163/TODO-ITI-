@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:to_do/constants/assets.dart';
+import 'package:to_do/screens/my_tasks_screen.dart';
 
 class GetStartScreen extends StatelessWidget {
   const GetStartScreen({super.key});
@@ -54,7 +55,12 @@ class GetStartScreen extends StatelessWidget {
               ),
               SizedBox(height: 24),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MyTasksScreen()),
+                  );
+                },
                 child: Text("Let’s Get Started"),
               ),
             ],
