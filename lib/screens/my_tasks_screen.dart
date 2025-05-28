@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:to_do/constants/assets.dart';
+import 'package:to_do/screens/add_tasks_screen.dart';
 
 import 'package:to_do/widgets/my_task_header.dart';
 
@@ -13,7 +14,10 @@ class MyTasksScreen extends StatelessWidget {
       floatingActionButton: SizedBox(
         height: 40,
         child: FloatingActionButton.extended(
-          onPressed: () {},
+          onPressed: () => Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddTasksScreen()),
+          ),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadiusGeometry.circular(50),
           ),
