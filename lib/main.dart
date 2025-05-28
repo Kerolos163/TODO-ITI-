@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           selectionHandleColor: Color(0XFF14B86B),
         ),
         inputDecorationTheme: InputDecorationTheme(
-          hintStyle: TextStyle(color: Color(0xFF6D6D6D), fontSize: 18),
+          hintStyle: TextStyle(color: Color(0xFF6D6D6D), fontSize: 16),
           contentPadding: EdgeInsets.all(12),
           filled: true,
           fillColor: Color(0XFF282828),
