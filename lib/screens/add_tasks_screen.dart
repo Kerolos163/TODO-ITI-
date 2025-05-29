@@ -13,6 +13,7 @@ class _AddTasksScreenState extends State<AddTasksScreen> {
   late TextEditingController taskNameController;
   late TextEditingController? taskDescriptionController;
   final _formKey = GlobalKey<FormState>();
+  bool switchValue = false;
 
   @override
   void initState() {
@@ -58,12 +59,28 @@ class _AddTasksScreenState extends State<AddTasksScreen> {
                 controllerl: taskDescriptionController,
                 maxLines: 5,
               ),
+              SizedBox(height: 20),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "High Priority",
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                  Switch(
+                    value: switchValue,
+                    onChanged: (value) {
+                      setState(() {
+                        switchValue = value;
+                      });
+                    },
+                  ),
+                ],
+              ),
               Spacer(),
               ElevatedButton.icon(
                 onPressed: () async {
-                  if (_formKey.currentState!.validate()) {
-               
-                  }
+                  if (_formKey.currentState!.validate()) {}
                 },
                 label: Text(
                   'Add Task',
