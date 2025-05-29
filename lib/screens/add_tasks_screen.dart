@@ -1,4 +1,10 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:to_do/constants/constant.dart';
+import 'package:to_do/models/task_model.dart';
 import 'package:to_do/widgets/form_field_with_label.dart';
 import 'package:to_do/constants/extensions.dart';
 
@@ -11,7 +17,7 @@ class AddTasksScreen extends StatefulWidget {
 
 class _AddTasksScreenState extends State<AddTasksScreen> {
   late TextEditingController taskNameController;
-  late TextEditingController? taskDescriptionController;
+  late TextEditingController taskDescriptionController;
   final _formKey = GlobalKey<FormState>();
   bool switchValue = false;
 
@@ -25,7 +31,7 @@ class _AddTasksScreenState extends State<AddTasksScreen> {
   @override
   void dispose() {
     taskNameController.dispose();
-    taskDescriptionController?.dispose();
+    taskDescriptionController.dispose();
     super.dispose();
   }
 
@@ -80,7 +86,9 @@ class _AddTasksScreenState extends State<AddTasksScreen> {
               Spacer(),
               ElevatedButton.icon(
                 onPressed: () async {
-                  if (_formKey.currentState!.validate()) {}
+                  if (_formKey.currentState!.validate()) {
+                    await storeLocalStorage();
+                  }
                 },
                 label: Text(
                   'Add Task',
@@ -96,5 +104,24 @@ class _AddTasksScreenState extends State<AddTasksScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> storeLocalStorage() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final List<String> items = prefs.getStringList(Constant.userTasks) ?? [];
+    log('items: $items');
+    TaskModel item = TaskModel(
+      id: items.length + 1,
+      taskName: taskNameController.text.trim(),
+      description: taskDescriptionController.text.trim(),
+      isHighPriority: switchValue,
+    );
+    items.add(jsonEncode(item.toJson()));
+    await prefs.setStringList(Constant.userTasks, items);
+    taskNameController.clear();
+    taskDescriptionController.clear();
+    if (mounted) {
+      Navigator.pop(context);
+    }
   }
 }
