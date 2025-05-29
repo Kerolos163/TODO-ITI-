@@ -9,7 +9,7 @@ import 'package:to_do/models/task_model.dart';
 import 'package:to_do/screens/add_tasks_screen.dart';
 
 import 'package:to_do/widgets/my_task_header.dart';
-import 'package:to_do/widgets/tasks_builder.dart';
+import 'package:to_do/widgets/myTasksScreen/tasks_builder.dart';
 
 class MyTasksScreen extends StatefulWidget {
   const MyTasksScreen({super.key});
