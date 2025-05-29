@@ -2,9 +2,17 @@
 class Assets {
   Assets._();
   
+  /// Assets for assetsImgsCompleteIcon
+  /// asset/imgs/completeIcon.svg
+  static const String assetsImgsCompleteIcon = "asset/imgs/completeIcon.svg";
+
   /// Assets for assetsImgsGetStartImage
   /// asset/imgs/getStartImage.svg
   static const String assetsImgsGetStartImage = "asset/imgs/getStartImage.svg";
+
+  /// Assets for assetsImgsHomeIcon
+  /// asset/imgs/homeIcon.svg
+  static const String assetsImgsHomeIcon = "asset/imgs/homeIcon.svg";
 
   /// Assets for assetsImgsIcon
   /// asset/imgs/icon.svg
@@ -21,6 +29,14 @@ class Assets {
   /// Assets for assetsImgsLogo
   /// asset/imgs/logo.svg
   static const String assetsImgsLogo = "asset/imgs/logo.svg";
+
+  /// Assets for assetsImgsProfileIcon
+  /// asset/imgs/profileIcon.svg
+  static const String assetsImgsProfileIcon = "asset/imgs/profileIcon.svg";
+
+  /// Assets for assetsImgsToDoIcon
+  /// asset/imgs/toDoIcon.svg
+  static const String assetsImgsToDoIcon = "asset/imgs/toDoIcon.svg";
 
   /// Assets for assetsImgsWavingHand
   /// asset/imgs/wavingHand.svg

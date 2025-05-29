@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do/constants/constant.dart';
 import 'package:to_do/screens/get_start_screen.dart';
-import 'package:to_do/screens/my_tasks_screen.dart';
+import 'package:to_do/screens/layout_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -108,10 +108,17 @@ class MyApp extends StatelessWidget {
             borderRadius: BorderRadiusGeometry.circular(4),
             side: BorderSide(width: 2),
           ),
+        ),
 
+        bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          backgroundColor: Color(0XFF181818),
+          selectedItemColor: Color(0XFF15BB6C),
+          unselectedItemColor: Color(0XFFC6C6C6),
+          
+          type: BottomNavigationBarType.fixed,
         ),
       ),
-      home: user == null ? GetStartScreen() : MyTasksScreen(),
+      home: user == null ? GetStartScreen() : LayoutScreen(),
     );
   }
 }
