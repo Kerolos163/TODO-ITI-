@@ -81,6 +81,7 @@ class _MyTasksScreenState extends State<MyTasksScreen> {
                   SvgPicture.asset(Assets.assetsImgsWavingHand),
                 ],
               ),
+              SizedBox(height: 24),
               TaskBuilder(items: items),
             ],
           ),

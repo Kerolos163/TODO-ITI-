@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:to_do/models/task_model.dart';
+import 'package:to_do/widgets/task_item.dart';
 
 class TaskBuilder extends StatelessWidget {
   const TaskBuilder({super.key, required this.items});
@@ -7,15 +8,19 @@ class TaskBuilder extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemBuilder: (BuildContext context, int index) {
-        return Text(
-          items[index].taskName,
-          style: Theme.of(context).textTheme.bodyLarge,
-        );
-      },
-      itemCount: items.length,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text("My Tasks", style: Theme.of(context).textTheme.titleMedium),
+        SizedBox(height: 16),
+        ListView.separated(
+          shrinkWrap: true,
+          itemBuilder: (BuildContext context, int index) =>
+              TaskItem(item: items[index]),
+          separatorBuilder: (context, index) => SizedBox(height: 8),
+          itemCount: items.length,
+        ),
+      ],
     );
   }
 }

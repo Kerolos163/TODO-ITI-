@@ -56,6 +56,7 @@ class MyApp extends StatelessWidget {
         ),
         textTheme: TextTheme(
           titleLarge: TextStyle(fontSize: 28, color: Colors.white),
+          titleMedium: TextStyle(fontSize: 20, color: Color(0XFFFFFCFC)),
           bodyLarge: TextStyle(fontSize: 24, color: Color(0XFFFFFCFC)),
           bodyMedium: TextStyle(fontSize: 16, color: Color(0XFFFFFCFC)),
           labelMedium: TextStyle(
@@ -89,6 +90,25 @@ class MyApp extends StatelessWidget {
             }
             return 2;
           }),
+        ),
+        checkboxTheme: CheckboxThemeData(
+          fillColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.selected)) {
+              return Color(0XFF15BB6C);
+            }
+            return Colors.transparent;
+          }),
+          checkColor: WidgetStateProperty.resolveWith((states) {
+            if (states.contains(WidgetState.selected)) {
+              return Colors.white;
+            }
+            return Colors.transparent;
+          }),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadiusGeometry.circular(4),
+            side: BorderSide(width: 2),
+          ),
+
         ),
       ),
       home: user == null ? GetStartScreen() : MyTasksScreen(),
