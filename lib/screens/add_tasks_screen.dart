@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:to_do/constants/assets.dart';
 
 class AddTasksScreen extends StatelessWidget {
   const AddTasksScreen({super.key});
@@ -37,21 +35,15 @@ class AddTasksScreen extends StatelessWidget {
               ),
             ),
             Spacer(),
-            ElevatedButton(
+            ElevatedButton.icon(
               onPressed: () {},
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(Assets.assetsImgsIcon),
-                  SizedBox(width: 8),
-                  Text(
-                    'Add Task',
-                    style: Theme.of(
-                      context,
-                    ).textTheme.bodyMedium?.copyWith(fontSize: 18),
-                  ),
-                ],
+              label: Text(
+                'Add Task',
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyMedium?.copyWith(fontSize: 18),
               ),
+              icon: Icon(Icons.add),
             ),
             SizedBox(height: 16),
           ],
