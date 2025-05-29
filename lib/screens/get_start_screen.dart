@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do/constants/assets.dart';
+import 'package:to_do/constants/constant.dart';
 import 'package:to_do/constants/extensions.dart';
 import 'package:to_do/screens/my_tasks_screen.dart';
 import 'package:to_do/widgets/form_field_with_label.dart';
@@ -81,14 +83,23 @@ class _GetStartScreenState extends State<GetStartScreen> {
                 ),
                 SizedBox(height: 24),
                 ElevatedButton(
-                  onPressed: () {
+                  onPressed: () async {
                     if (_formKey.currentState!.validate()) {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MyTasksScreen(),
-                        ),
+                      SharedPreferences prefs =
+                          await SharedPreferences.getInstance();
+                      await prefs.setString(
+                        Constant.nameKey,
+                        controllerl.text.trim(),
                       );
+
+                      if (context.mounted) {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MyTasksScreen(),
+                          ),
+                        );
+                      }
                     }
                   },
                   child: Text("Let’s Get Started"),

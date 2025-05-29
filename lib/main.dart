@@ -1,13 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:to_do/constants/constant.dart';
 import 'package:to_do/screens/get_start_screen.dart';
+import 'package:to_do/screens/my_tasks_screen.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  // prefs.clear();
+  String? user = prefs.getString(Constant.nameKey);
+  runApp(MyApp(user: user));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  const MyApp({super.key, required this.user});
+  final String? user;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -58,7 +65,7 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: GetStartScreen(),
+      home: user == null ? GetStartScreen() : MyTasksScreen(),
     );
   }
 }
