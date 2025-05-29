@@ -38,7 +38,7 @@ class _GetStartScreenState extends State<GetStartScreen> {
           padding: EdgeInsetsGeometry.symmetric(horizontal: 16),
           child: Form(
             key: _formKey,
-            child: Column(
+            child: ListView(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -93,7 +93,7 @@ class _GetStartScreenState extends State<GetStartScreen> {
                       );
 
                       if (context.mounted) {
-                        Navigator.push(
+                        Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
                             builder: (context) => MyTasksScreen(),

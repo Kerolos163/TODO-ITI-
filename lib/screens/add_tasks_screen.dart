@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do/constants/constant.dart';
 import 'package:to_do/models/task_model.dart';
+import 'package:to_do/screens/my_tasks_screen.dart';
 import 'package:to_do/widgets/form_field_with_label.dart';
 import 'package:to_do/constants/extensions.dart';
 
@@ -109,7 +110,7 @@ class _AddTasksScreenState extends State<AddTasksScreen> {
   Future<void> storeLocalStorage() async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final List<String> items = prefs.getStringList(Constant.userTasks) ?? [];
-    log('items: $items');
+
     TaskModel item = TaskModel(
       id: items.length + 1,
       taskName: taskNameController.text.trim(),
@@ -117,11 +118,15 @@ class _AddTasksScreenState extends State<AddTasksScreen> {
       isHighPriority: switchValue,
     );
     items.add(jsonEncode(item.toJson()));
+    log('items: $items');
     await prefs.setStringList(Constant.userTasks, items);
     taskNameController.clear();
     taskDescriptionController.clear();
     if (mounted) {
-      Navigator.pop(context);
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => MyTasksScreen()),
+      );
     }
   }
 }
