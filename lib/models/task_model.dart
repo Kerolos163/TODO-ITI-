@@ -3,12 +3,14 @@ class TaskModel {
   final String taskName;
   final String? description;
   final bool isHighPriority;
+  bool isCompleted;
 
   TaskModel({
     required this.id,
     required this.taskName,
     this.description,
     required this.isHighPriority,
+    this.isCompleted = false,
   });
 
   factory TaskModel.fromJson(Map<String, dynamic> map) {
@@ -17,6 +19,7 @@ class TaskModel {
       taskName: map["taskName"],
       description: map["description"],
       isHighPriority: map["isHighPriority"],
+      isCompleted: map["isCompleted"],
     );
   }
 
@@ -26,6 +29,7 @@ class TaskModel {
       "taskName": taskName,
       "description": description,
       "isHighPriority": isHighPriority,
+      "isCompleted": isCompleted,
     };
   }
 }
