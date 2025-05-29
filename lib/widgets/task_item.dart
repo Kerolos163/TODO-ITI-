@@ -67,7 +67,7 @@ class _TaskItemState extends State<TaskItem> {
                                   context,
                                 ).textTheme.labelMedium?.copyWith(
                                   decoration: TextDecoration.lineThrough,
-                                  decorationColor: Color(0XFFFFFCFC),
+                                  decorationColor: Color(0XFFC6C6C6),
                                   decorationThickness: 1.5,
                                 )
                               : Theme.of(context).textTheme.labelMedium,
