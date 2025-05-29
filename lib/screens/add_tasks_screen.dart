@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do/constants/constant.dart';
 import 'package:to_do/models/task_model.dart';
-import 'package:to_do/screens/my_tasks_screen.dart';
+import 'package:to_do/screens/layout_screen.dart';
 import 'package:to_do/widgets/form_field_with_label.dart';
 import 'package:to_do/constants/extensions.dart';
 
@@ -125,7 +125,7 @@ class _AddTasksScreenState extends State<AddTasksScreen> {
     if (mounted) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => MyTasksScreen()),
+        MaterialPageRoute(builder: (context) => LayoutScreen()),
       );
     }
   }

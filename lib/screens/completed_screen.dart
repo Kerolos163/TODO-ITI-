@@ -26,7 +26,7 @@ class _CompletedScreenState extends State<CompletedScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("To Do Tasks")),
+      appBar: AppBar(title: Text("Completed Tasks")),
       body: toDoItem == null
           ? CircularProgressIndicator()
           : ListView.separated(
