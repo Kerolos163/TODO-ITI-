@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:to_do/widgets/form_field_with_label.dart';
 
 class AddTasksScreen extends StatelessWidget {
   const AddTasksScreen({super.key});
@@ -12,27 +13,16 @@ class AddTasksScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Task Name", style: Theme.of(context).textTheme.bodyMedium),
-            SizedBox(height: 8),
-            TextField(
-              style: TextStyle(fontSize: 20),
-              decoration: InputDecoration(
-                hintText: 'Finish UI design for login screen',
-              ),
+            CustomTextFormField(
+              title: "Task Name",
+              hintText: "Finish UI design for login screen",
             ),
             SizedBox(height: 20),
-            Text(
-              "Task Description",
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            SizedBox(height: 8),
-            TextField(
-              style: TextStyle(fontSize: 20),
+            CustomTextFormField(
+              title: "Task Description",
+              hintText:
+                  "Finish onboarding UI and hand off to devs by Thursday.",
               maxLines: 5,
-              decoration: InputDecoration(
-                hintText:
-                    'Finish onboarding UI and hand off to devs by Thursday.',
-              ),
             ),
             Spacer(),
             ElevatedButton.icon(

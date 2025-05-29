@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:to_do/constants/assets.dart';
 import 'package:to_do/screens/my_tasks_screen.dart';
+import 'package:to_do/widgets/form_field_with_label.dart';
 
 class GetStartScreen extends StatelessWidget {
   const GetStartScreen({super.key});
@@ -41,17 +42,10 @@ class GetStartScreen extends StatelessWidget {
               SizedBox(height: 24),
               SvgPicture.asset(Assets.assetsImgsGetStartImage),
               SizedBox(height: 28),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  "Full Name",
-                  style: Theme.of(context).textTheme.bodyMedium,
-                ),
-              ),
-              SizedBox(height: 8),
-              TextField(
-                style: TextStyle(fontSize: 20),
-                decoration: InputDecoration(hintText: 'e.g. Sarah Khalid'),
+
+              CustomTextFormField(
+                title: "Full Name",
+                hintText: "e.g. Sarah Khalid",
               ),
               SizedBox(height: 24),
               ElevatedButton(

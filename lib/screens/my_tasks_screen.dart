@@ -22,17 +22,12 @@ class MyTasksScreen extends StatelessWidget {
             borderRadius: BorderRadiusGeometry.circular(50),
           ),
           backgroundColor: Color(0xFF15B86C),
-          label: Row(
-            children: [
-              SvgPicture.asset(Assets.assetsImgsIcon),
-              SizedBox(width: 8),
-              Text(
-                'Add New Task',
-                style: Theme.of(
-                  context,
-                ).textTheme.bodyMedium?.copyWith(fontSize: 18),
-              ),
-            ],
+          icon: Icon(Icons.add, color: Colors.white),
+          label: Text(
+            'Add New Task',
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(fontSize: 18),
           ),
         ),
       ),
