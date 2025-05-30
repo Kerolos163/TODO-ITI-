@@ -11,7 +11,6 @@ import 'package:to_do/state/app_provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await PreferencesManager.init();
-  // final SharedPreferences prefs = await SharedPreferences.getInstance();
   // PreferencesManager.clear();
   String? user = PreferencesManager.getString(Constant.nameKey);
   runApp(MyApp(user: user));
