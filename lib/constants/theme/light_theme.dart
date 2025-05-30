@@ -7,6 +7,7 @@ ThemeData lightTheme = ThemeData(
     primaryContainer: Color(0xFFFFFFFF),
     secondary: Color(0xFF3A4640),
     onSurface: Color(0XFF6A6A6A),
+    shadow: Color(0XFF161F1B),
   ),
   scaffoldBackgroundColor: Color(0xFFF6F7F9),
   textSelectionTheme: TextSelectionThemeData(
@@ -74,7 +75,7 @@ ThemeData lightTheme = ThemeData(
       color: Color(0xFF3A4640),
       fontWeight: FontWeight.w300,
     ),
-    labelSmall: TextStyle(fontSize: 14, color: Color(0XFF3A4640))
+    labelSmall: TextStyle(fontSize: 14, color: Color(0XFF3A4640)),
   ),
 
   inputDecorationTheme: InputDecorationTheme(

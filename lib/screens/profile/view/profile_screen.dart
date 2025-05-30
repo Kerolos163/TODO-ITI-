@@ -106,7 +106,7 @@ class ProfileItem extends StatelessWidget {
     return ListTile(
       contentPadding: EdgeInsets.zero,
       title: Text(title, style: Theme.of(context).textTheme.bodyMedium),
-      leading: CustomSvgPicture(path: path),
+      leading: CustomSvgPicture(path: path, withColorFilter: true),
       trailing: trailing,
     );
   }

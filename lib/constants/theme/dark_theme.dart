@@ -7,7 +7,7 @@ ThemeData darkTheme = ThemeData(
     primaryContainer: Color(0xFF282828),
     secondary: Color(0XFFC6C6C6),
     onSurface: Color(0XFFFFFCFC),
-
+    shadow: Color(0XFFFFFCFC),
   ),
   scaffoldBackgroundColor: Color(0xFF181818),
   textSelectionTheme: TextSelectionThemeData(
@@ -49,7 +49,6 @@ ThemeData darkTheme = ThemeData(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
-      
       backgroundColor: WidgetStateProperty.all(Color(0XFF15B86C)),
       foregroundColor: WidgetStateProperty.all(Color(0xFFFFFCFC)),
       textStyle: WidgetStateProperty.all(
@@ -78,7 +77,7 @@ ThemeData darkTheme = ThemeData(
       color: Color(0XFFC6C6C6),
       fontWeight: FontWeight.w300,
     ),
-    labelSmall: TextStyle(fontSize: 14, color: Color(0XFFC6C6C6))
+    labelSmall: TextStyle(fontSize: 14, color: Color(0XFFC6C6C6)),
   ),
   inputDecorationTheme: InputDecorationTheme(
     hintStyle: TextStyle(color: Color(0xFF6D6D6D)),

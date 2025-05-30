@@ -31,7 +31,7 @@ class CustomSvgPicture extends StatelessWidget {
       height: height,
       colorFilter: withColorFilter
           ? ColorFilter.mode(
-              Theme.of(context).colorScheme.secondary,
+              Theme.of(context).colorScheme.shadow,
               BlendMode.srcIn,
             )
           : null,

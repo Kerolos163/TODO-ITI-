@@ -23,8 +23,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<AppProvider>(
-      create: (context) => AppProvider(),
-
+      create: (context) => AppProvider()..getTheme(),
       child: Consumer<AppProvider>(
         builder: (context, appProvider, child) {
           return MaterialApp(
