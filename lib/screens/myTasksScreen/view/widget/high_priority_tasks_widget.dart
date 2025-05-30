@@ -53,7 +53,14 @@ class HighPriorityTasksWidget extends StatelessWidget {
                                   value: myTasksProvider
                                       .highPriorityItems[index]
                                       .isCompleted,
-                                  onChanged: (value) {},
+                                  onChanged: (value) => myTasksProvider.updateHighPriorityTaskState(
+                                      id: myTasksProvider
+                                          .highPriorityItems[index]
+                                          .id,
+                                      isSelected: myTasksProvider
+                                          .highPriorityItems[index]
+                                          .isCompleted,
+                                    ),
                                 ),
                                 Flexible(
                                   child: Text(

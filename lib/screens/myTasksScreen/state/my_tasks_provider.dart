@@ -59,4 +59,20 @@ class MyTasksProvider extends ChangeNotifier {
     log('highPriorityItems: $highPriorityItems');
     notifyListeners();
   }
+
+  Future<void> updateHighPriorityTaskState({
+    required int id,
+    required bool isSelected,
+  }) async {
+    for (var i in items) {
+      if (i.id == id) {
+        i.isCompleted = !isSelected;
+        notifyListeners();
+        break;
+      }
+    }
+    List<String> strList = items.map((e) => jsonEncode(e.toJson())).toList();
+    await PreferencesManager.setStringList(Constant.userTasks, strList);
+    getLocalData();
+  }
 }
