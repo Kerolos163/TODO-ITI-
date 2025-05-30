@@ -32,50 +32,54 @@ class _TaskItemState extends State<TaskItem> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Row(
-            children: [
-              Checkbox(
-                value: isSelected,
-                onChanged: (value) async {
-                  if (value != null) {
-                    setState(() {
-                      isSelected = value;
-                    });
-                    await _updateTaskState();
-                  }
-                },
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    widget.item.taskName,
-                    style: isSelected
-                        ? Theme.of(context).textTheme.bodyMedium?.copyWith(
-                            decoration: TextDecoration.lineThrough,
-                            decorationColor: Color(0XFFFFFCFC),
-                            decorationThickness: 1.5,
-                          )
-                        : Theme.of(context).textTheme.bodyMedium,
+          Expanded(
+            child: Row(
+              children: [
+                Checkbox(
+                  value: isSelected,
+                  onChanged: (value) async {
+                    if (value != null) {
+                      setState(() {
+                        isSelected = value;
+                      });
+                      await _updateTaskState();
+                    }
+                  },
+                ),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        widget.item.taskName,
+                        style: isSelected
+                            ? Theme.of(context).textTheme.bodyMedium?.copyWith(
+                                decoration: TextDecoration.lineThrough,
+                                decorationColor: Color(0XFFFFFCFC),
+                                decorationThickness: 1.5,
+                              )
+                            : Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      widget.item.description != ""
+                          ? Text(
+                              widget.item.description!,
+                              style: isSelected
+                                  ? Theme.of(
+                                      context,
+                                    ).textTheme.labelMedium?.copyWith(
+                                      decoration: TextDecoration.lineThrough,
+                                      decorationColor: Color(0XFFC6C6C6),
+                                      decorationThickness: 1.5,
+                                    )
+                                  : Theme.of(context).textTheme.labelMedium,
+                            )
+                          : SizedBox(),
+                    ],
                   ),
-                  widget.item.description != ""
-                      ? Text(
-                          widget.item.description!,
-                          style: isSelected
-                              ? Theme.of(
-                                  context,
-                                ).textTheme.labelMedium?.copyWith(
-                                  decoration: TextDecoration.lineThrough,
-                                  decorationColor: Color(0XFFC6C6C6),
-                                  decorationThickness: 1.5,
-                                )
-                              : Theme.of(context).textTheme.labelMedium,
-                        )
-                      : SizedBox(),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
           Icon(Icons.more_vert, color: Color(0XFFC6C6C6)),
         ],

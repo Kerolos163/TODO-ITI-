@@ -59,8 +59,8 @@ class _MyTasksScreenState extends State<MyTasksScreen> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: ListView(
+            // crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               MyTaskHeader(),
               SizedBox(height: 16),
@@ -83,6 +83,7 @@ class _MyTasksScreenState extends State<MyTasksScreen> {
               ),
               SizedBox(height: 24),
               TaskBuilder(items: items),
+              SizedBox(height: 60)
             ],
           ),
         ),

@@ -15,6 +15,7 @@ class TaskBuilder extends StatelessWidget {
         SizedBox(height: 16),
         ListView.separated(
           shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
           itemBuilder: (BuildContext context, int index) =>
               TaskItem(item: items[index]),
           separatorBuilder: (context, index) => SizedBox(height: 8),
