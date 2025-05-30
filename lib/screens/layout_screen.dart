@@ -4,7 +4,7 @@ import 'package:to_do/constants/assets.dart';
 import 'package:to_do/screens/completed_screen.dart';
 import 'package:to_do/screens/myTasksScreen/view/my_tasks_screen.dart';
 import 'package:to_do/screens/profile_screen.dart';
-import 'package:to_do/screens/to_do_screen.dart';
+import 'package:to_do/screens/toDoScree/view/to_do_screen.dart';
 
 class LayoutScreen extends StatefulWidget {
   const LayoutScreen({super.key});
