@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:to_do/constants/assets.dart';
+import 'package:to_do/constants/constant.dart';
+import 'package:to_do/constants/preferences_manager.dart';
+import 'package:to_do/screens/get_start_screen.dart';
 import 'package:to_do/state/app_provider.dart';
 import 'package:to_do/widgets/custom_svg_picture.dart';
 
@@ -82,6 +85,15 @@ class ProfileScreen extends StatelessWidget {
               path: Assets.assetsImgsLogOut,
               title: "Log Out",
               trailing: Icon(Icons.arrow_forward),
+              onTap: () {
+                PreferencesManager.remove(Constant.nameKey);
+                PreferencesManager.remove(Constant.userTasks);
+                Navigator.pushAndRemoveUntil(
+                  context,
+                  MaterialPageRoute(builder: (context) => GetStartScreen()),
+                  (route) => false,
+                );
+              },
             ),
           ],
         ),
@@ -96,14 +108,20 @@ class ProfileItem extends StatelessWidget {
     this.trailing,
     required this.path,
     required this.title,
+    this.onTap,
   });
   final String title;
   final String path;
   final Widget? trailing;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
+      onTap: onTap,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadiusGeometry.circular(10),
+      ),
       contentPadding: EdgeInsets.zero,
       title: Text(title, style: Theme.of(context).textTheme.bodyMedium),
       leading: CustomSvgPicture(path: path, withColorFilter: true),
