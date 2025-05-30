@@ -3,6 +3,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:to_do/constants/assets.dart';
 import 'package:to_do/screens/addTasksScreen/view/add_tasks_screen.dart';
+import 'package:to_do/screens/myTasksScreen/view/widget/achieved_task_container.dart';
+import 'package:to_do/screens/myTasksScreen/view/widget/high_priority_tasks_widget.dart';
 
 import 'package:to_do/widgets/my_task_header.dart';
 import 'package:to_do/screens/myTasksScreen/view/widget/tasks_builder.dart';
@@ -32,9 +34,7 @@ class MyTasksScreen extends StatelessWidget {
             icon: Icon(Icons.add, color: Colors.white),
             label: Text(
               'Add New Task',
-              style: Theme.of(
-                context,
-              ).textTheme.headlineMedium,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ),
         ),
@@ -51,6 +51,7 @@ class MyTasksScreen extends StatelessWidget {
                     context,
                   ).textTheme.bodyLarge?.copyWith(fontSize: 32),
                 ),
+
                 Row(
                   children: [
                     Text(
@@ -62,6 +63,10 @@ class MyTasksScreen extends StatelessWidget {
                     SvgPicture.asset(Assets.assetsImgsWavingHand),
                   ],
                 ),
+                SizedBox(height: 24),
+                AchievedTaskContainer(),
+                SizedBox(height: 24),
+                HighPriorityTasksWidget(),
                 SizedBox(height: 24),
                 Selector<MyTasksProvider, List<TaskModel>>(
                   selector: (_, myTasksProvider) => myTasksProvider.items,

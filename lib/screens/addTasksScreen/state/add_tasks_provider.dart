@@ -17,7 +17,6 @@ class AddTasksProvider extends ChangeNotifier {
   Future<void> storeLocalStorage({
     required String taskName,
     required String description,
-    required bool isHighPriority,
   }) async {
     final List<String> items =
         PreferencesManager.getStringList(Constant.userTasks) ?? [];
@@ -26,8 +25,9 @@ class AddTasksProvider extends ChangeNotifier {
       id: items.length + 1,
       taskName: taskName,
       description: description,
-      isHighPriority: isHighPriority,
+      isHighPriority: switchValue,
     );
+    log('switchValue ==>>: $switchValue');
     items.add(jsonEncode(item.toJson()));
     log('items: $items');
     await PreferencesManager.setStringList(Constant.userTasks, items);

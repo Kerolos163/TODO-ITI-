@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do/constants/assets.dart';
 import 'package:to_do/constants/constant.dart';
 import 'package:to_do/constants/extensions.dart';
 import 'package:to_do/screens/myTasksScreen/view/my_tasks_screen.dart';
+import 'package:to_do/widgets/custom_svg_picture.dart';
 import 'package:to_do/widgets/form_field_with_label.dart';
 
 class GetStartScreen extends StatefulWidget {
@@ -43,7 +43,7 @@ class _GetStartScreenState extends State<GetStartScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SvgPicture.asset(Assets.assetsImgsLogo),
+                    CustomSvgPicture(path: Assets.assetsImgsLogo),
                     SizedBox(width: 16),
                     Text(
                       "Tasky",
@@ -59,7 +59,7 @@ class _GetStartScreenState extends State<GetStartScreen> {
                       "Welcome To Tasky ",
                       style: Theme.of(context).textTheme.bodyLarge,
                     ),
-                    SvgPicture.asset(Assets.assetsImgsWavingHand),
+                    CustomSvgPicture(path:Assets.assetsImgsWavingHand),
                   ],
                 ),
                 SizedBox(height: 8),
@@ -68,7 +68,7 @@ class _GetStartScreenState extends State<GetStartScreen> {
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 SizedBox(height: 24),
-                SvgPicture.asset(Assets.assetsImgsGetStartImage),
+                CustomSvgPicture(path:Assets.assetsImgsGetStartImage),
                 SizedBox(height: 28),
                 CustomTextFormField(
                   title: "Full Name",

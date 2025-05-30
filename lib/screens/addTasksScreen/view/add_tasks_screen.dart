@@ -95,7 +95,6 @@ class _AddTasksScreenState extends State<AddTasksScreen> {
                           await addTasksProvider.storeLocalStorage(
                             taskName: taskNameController.text.trim(),
                             description: taskDescriptionController.text.trim(),
-                            isHighPriority: switchValue,
                           );
                           taskNameController.clear();
                           taskDescriptionController.clear();

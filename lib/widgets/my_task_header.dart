@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do/constants/assets.dart';
 import 'package:to_do/constants/constant.dart';
+import 'package:to_do/widgets/custom_svg_picture.dart';
 
 class MyTaskHeader extends StatefulWidget {
   const MyTaskHeader({super.key});
@@ -51,7 +52,7 @@ class _MyTaskHeaderState extends State<MyTaskHeader> {
         ),
         Padding(
           padding: const EdgeInsets.only(bottom: 20),
-          child: SvgPicture.asset(Assets.assetsImgsLight),
+          child: CustomSvgPicture(path: Assets.assetsImgsLight),
         ),
       ],
     );
