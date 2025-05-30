@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:to_do/constants/assets.dart';
-import 'package:to_do/screens/add_tasks_screen.dart';
+import 'package:to_do/screens/addTasksScreen/view/add_tasks_screen.dart';
 
 import 'package:to_do/widgets/my_task_header.dart';
 import 'package:to_do/screens/myTasksScreen/view/widget/tasks_builder.dart';

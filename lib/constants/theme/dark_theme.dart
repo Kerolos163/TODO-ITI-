@@ -49,6 +49,7 @@ ThemeData darkTheme = ThemeData(
   ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
+      
       backgroundColor: WidgetStateProperty.all(Color(0XFF15B86C)),
       foregroundColor: WidgetStateProperty.all(Color(0xFFFFFCFC)),
       textStyle: WidgetStateProperty.all(
@@ -71,7 +72,7 @@ ThemeData darkTheme = ThemeData(
     titleMedium: TextStyle(fontSize: 20, color: Color(0XFFFFFCFC)),
     bodyLarge: TextStyle(fontSize: 24, color: Color(0XFFFFFCFC)),
     bodyMedium: TextStyle(fontSize: 16, color: Color(0XFFFFFCFC)),
-    headlineMedium: TextStyle(fontSize: 10, color: Color(0XFFFFFCFC)),
+    headlineMedium: TextStyle(fontSize: 18, color: Color(0XFFFFFCFC)),
     labelMedium: TextStyle(
       fontSize: 14,
       color: Color(0XFFC6C6C6),

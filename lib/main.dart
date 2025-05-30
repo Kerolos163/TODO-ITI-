@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:to_do/constants/constant.dart';
+import 'package:to_do/constants/preferences_manager.dart';
 import 'package:to_do/constants/theme/dark_theme.dart';
 import 'package:to_do/constants/theme/light_theme.dart';
 import 'package:to_do/screens/get_start_screen.dart';
@@ -8,9 +8,10 @@ import 'package:to_do/screens/layout_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  final SharedPreferences prefs = await SharedPreferences.getInstance();
-  // prefs.clear();
-  String? user = prefs.getString(Constant.nameKey);
+  await PreferencesManager.init();
+  // final SharedPreferences prefs = await SharedPreferences.getInstance();
+  // PreferencesManager.clear();
+  String? user = PreferencesManager.getString(Constant.nameKey);
   runApp(MyApp(user: user));
 }
 
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       home: user == null ? GetStartScreen() : LayoutScreen(),
     );
   }
