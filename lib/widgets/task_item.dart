@@ -42,16 +42,14 @@ class _TaskItemState extends State<TaskItem> {
                       Text(
                         widget.item.taskName,
                         style: widget.item.isCompleted
-                            ? Theme.of(
-                                      context,
-                                    ).textTheme.labelMedium?.copyWith(
-                                      decoration: TextDecoration.lineThrough,
-                                      decorationColor: Theme.of(
-                                        context,
-                                      ).colorScheme.secondary,
-                                      decorationThickness: 1.5,
-                                    )
-                                  : Theme.of(context).textTheme.labelMedium,
+                            ? Theme.of(context).textTheme.labelMedium?.copyWith(
+                                decoration: TextDecoration.lineThrough,
+                                decorationColor: Theme.of(
+                                  context,
+                                ).colorScheme.secondary,
+                                decorationThickness: 1.5,
+                              )
+                            : Theme.of(context).textTheme.labelMedium,
                       ),
                       widget.item.description != ""
                           ? Text(
@@ -60,10 +58,9 @@ class _TaskItemState extends State<TaskItem> {
                                   ? Theme.of(
                                       context,
                                     ).textTheme.labelMedium?.copyWith(
+                                      color: Color(0XFF6A6A6A),
                                       decoration: TextDecoration.lineThrough,
-                                      decorationColor: Theme.of(
-                                        context,
-                                      ).colorScheme.secondary,
+                                      decorationColor: Color(0XFF6A6A6A),
                                       decorationThickness: 1.5,
                                     )
                                   : Theme.of(context).textTheme.labelMedium,
@@ -81,3 +78,13 @@ class _TaskItemState extends State<TaskItem> {
     );
   }
 }
+
+// Theme.of(
+//                                             context,
+//                                           ).textTheme.bodyMedium?.copyWith(
+//                                             color: Color(0XFF6A6A6A),
+//                                             decoration:
+//                                                 TextDecoration.lineThrough,
+//                                             decorationColor: Color(0XFF6A6A6A),
+//                                             decorationThickness: 1.5,
+//                                           )

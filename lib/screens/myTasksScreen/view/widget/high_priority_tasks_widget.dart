@@ -74,9 +74,10 @@ class HighPriorityTasksWidget extends StatelessWidget {
                                         ? Theme.of(
                                             context,
                                           ).textTheme.bodyMedium?.copyWith(
+                                            color: Color(0XFF6A6A6A),
                                             decoration:
                                                 TextDecoration.lineThrough,
-                                            decorationColor: Color(0XFFFFFCFC),
+                                            decorationColor: Color(0XFF6A6A6A),
                                             decorationThickness: 1.5,
                                           )
                                         : Theme.of(
