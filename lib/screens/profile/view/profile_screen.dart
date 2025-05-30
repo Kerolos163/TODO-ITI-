@@ -17,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<ProfileProvider>(
-      create: (context) => ProfileProvider()..getImage(),
+      create: (context) => ProfileProvider()..getInfo(),
       child: Scaffold(
         appBar: AppBar(
           title: Text("My Profile"),
@@ -69,9 +69,14 @@ class ProfileScreen extends StatelessWidget {
                       },
                     ),
                     SizedBox(height: 8),
-                    Text(
-                      "Usama Elgendy",
-                      style: Theme.of(context).textTheme.bodyLarge,
+                    Selector<ProfileProvider, String?>(
+                      selector: (_, myType) => myType.name,
+                      builder: (context, name, child) {
+                        return Text(
+                          name ?? "",
+                          style: Theme.of(context).textTheme.bodyLarge,
+                        );
+                      },
                     ),
                     SizedBox(height: 4),
                     Text(

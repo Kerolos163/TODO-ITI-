@@ -1,4 +1,3 @@
-import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -9,9 +8,11 @@ import 'package:to_do/constants/preferences_manager.dart';
 
 class ProfileProvider extends ChangeNotifier {
   String? profileImage;
+  String? name;
 
-  void getImage() async {
+  void getInfo() async {
     profileImage = PreferencesManager.getString(Constant.userImage);
+    name = PreferencesManager.getString(Constant.nameKey);
   }
 
   void saveImage(XFile file) async {
