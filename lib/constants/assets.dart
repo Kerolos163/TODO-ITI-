@@ -10,6 +10,10 @@ class Assets {
   /// asset/imgs/completeIcon.svg
   static const String assetsImgsCompleteIcon = "asset/imgs/completeIcon.svg";
 
+  /// Assets for assetsImgsDarkModeProfile
+  /// asset/imgs/darkModeProfile.svg
+  static const String assetsImgsDarkModeProfile = "asset/imgs/darkModeProfile.svg";
+
   /// Assets for assetsImgsGetStartImage
   /// asset/imgs/getStartImage.svg
   static const String assetsImgsGetStartImage = "asset/imgs/getStartImage.svg";
@@ -30,9 +34,17 @@ class Assets {
   /// asset/imgs/Light.svg
   static const String assetsImgsLight = "asset/imgs/Light.svg";
 
+  /// Assets for assetsImgsLogOut
+  /// asset/imgs/log-out.svg
+  static const String assetsImgsLogOut = "asset/imgs/log-out.svg";
+
   /// Assets for assetsImgsLogo
   /// asset/imgs/logo.svg
   static const String assetsImgsLogo = "asset/imgs/logo.svg";
+
+  /// Assets for assetsImgsPerson
+  /// asset/imgs/person.png
+  static const String assetsImgsPerson = "asset/imgs/person.png";
 
   /// Assets for assetsImgsProfileIcon
   /// asset/imgs/profileIcon.svg

@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:to_do/constants/assets.dart';
 import 'package:to_do/screens/completedScreen/view/completed_screen.dart';
 import 'package:to_do/screens/myTasksScreen/view/my_tasks_screen.dart';
-import 'package:to_do/screens/profile_screen.dart';
+import 'package:to_do/screens/profile/view/profile_screen.dart';
 import 'package:to_do/screens/toDoScree/view/to_do_screen.dart';
 
 class LayoutScreen extends StatefulWidget {

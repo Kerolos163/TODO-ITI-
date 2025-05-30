@@ -78,6 +78,7 @@ ThemeData darkTheme = ThemeData(
       color: Color(0XFFC6C6C6),
       fontWeight: FontWeight.w300,
     ),
+    labelSmall: TextStyle(fontSize: 14, color: Color(0XFFC6C6C6))
   ),
   inputDecorationTheme: InputDecorationTheme(
     hintStyle: TextStyle(color: Color(0xFF6D6D6D)),

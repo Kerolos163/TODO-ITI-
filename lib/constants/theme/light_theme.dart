@@ -74,7 +74,9 @@ ThemeData lightTheme = ThemeData(
       color: Color(0xFF3A4640),
       fontWeight: FontWeight.w300,
     ),
+    labelSmall: TextStyle(fontSize: 14, color: Color(0XFF3A4640))
   ),
+
   inputDecorationTheme: InputDecorationTheme(
     hintStyle: TextStyle(color: Color(0xFF9E9E9E)),
     filled: true,
