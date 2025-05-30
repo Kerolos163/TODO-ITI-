@@ -26,7 +26,10 @@ class _ToDOScreenState extends State<ToDOScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("To Do Tasks")),
+      appBar: AppBar(
+        title: Text("To Do Tasks"),
+        automaticallyImplyLeading: false,
+      ),
       body: toDoItem == null
           ? CircularProgressIndicator()
           : ListView.separated(
