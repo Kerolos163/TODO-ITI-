@@ -34,7 +34,7 @@ class MyTasksScreen extends StatelessWidget {
               'Add New Task',
               style: Theme.of(
                 context,
-              ).textTheme.bodyMedium?.copyWith(fontSize: 18),
+              ).textTheme.headlineMedium,
             ),
           ),
         ),

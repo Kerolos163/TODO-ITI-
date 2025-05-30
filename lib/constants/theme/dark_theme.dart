@@ -6,6 +6,8 @@ ThemeData darkTheme = ThemeData(
   colorScheme: ColorScheme.dark(
     primaryContainer: Color(0xFF282828),
     secondary: Color(0XFFC6C6C6),
+    onSurface: Color(0XFFFFFCFC),
+
   ),
   scaffoldBackgroundColor: Color(0xFF181818),
   textSelectionTheme: TextSelectionThemeData(
@@ -69,6 +71,7 @@ ThemeData darkTheme = ThemeData(
     titleMedium: TextStyle(fontSize: 20, color: Color(0XFFFFFCFC)),
     bodyLarge: TextStyle(fontSize: 24, color: Color(0XFFFFFCFC)),
     bodyMedium: TextStyle(fontSize: 16, color: Color(0XFFFFFCFC)),
+    headlineMedium: TextStyle(fontSize: 10, color: Color(0XFFFFFCFC)),
     labelMedium: TextStyle(
       fontSize: 14,
       color: Color(0XFFC6C6C6),

@@ -6,6 +6,7 @@ ThemeData lightTheme = ThemeData(
   colorScheme: ColorScheme.light(
     primaryContainer: Color(0xFFFFFFFF),
     secondary: Color(0xFF3A4640),
+    onSurface: Color(0XFF6A6A6A),
   ),
   scaffoldBackgroundColor: Color(0xFFF6F7F9),
   textSelectionTheme: TextSelectionThemeData(
@@ -67,6 +68,7 @@ ThemeData lightTheme = ThemeData(
     titleMedium: TextStyle(fontSize: 20, color: Color(0xFF161F1B)),
     bodyLarge: TextStyle(fontSize: 24, color: Color(0xFF161F1B)),
     bodyMedium: TextStyle(fontSize: 16, color: Color(0xFF161F1B)),
+    headlineMedium: TextStyle(fontSize: 18, color: Color(0XFFFFFCFC)),
     labelMedium: TextStyle(
       fontSize: 14,
       color: Color(0xFF3A4640),

@@ -1,25 +1,12 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:to_do/constants/constant.dart';
+import 'package:provider/provider.dart';
 import 'package:to_do/models/task_model.dart';
 
-class TaskItem extends StatefulWidget {
+import '../../state/my_tasks_provider.dart';
+
+class TaskItem extends StatelessWidget {
   const TaskItem({super.key, required this.item});
   final TaskModel item;
-
-  @override
-  State<TaskItem> createState() => _TaskItemState();
-}
-
-class _TaskItemState extends State<TaskItem> {
-  late bool isSelected;
-  @override
-  void initState() {
-    isSelected = widget.item.isCompleted;
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,15 +22,19 @@ class _TaskItemState extends State<TaskItem> {
           Expanded(
             child: Row(
               children: [
-                Checkbox(
-                  value: isSelected,
-                  onChanged: (value) async {
-                    if (value != null) {
-                      setState(() {
-                        isSelected = value;
-                      });
-                      await _updateTaskState();
-                    }
+                Consumer<MyTasksProvider>(
+                  builder: (context, myTasksProvider, child) {
+                    return Checkbox(
+                      value: item.isCompleted,
+                      onChanged: (value) async {
+                        if (value != null) {
+                          await myTasksProvider.updateTaskState(
+                            id: item.id,
+                            isSelected: value,
+                          );
+                        }
+                      },
+                    );
                   },
                 ),
                 Expanded(
@@ -52,24 +43,28 @@ class _TaskItemState extends State<TaskItem> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        widget.item.taskName,
-                        style: isSelected
+                        item.taskName,
+                        style: item.isCompleted
                             ? Theme.of(context).textTheme.bodyMedium?.copyWith(
                                 decoration: TextDecoration.lineThrough,
-                                decorationColor: Color(0XFFFFFCFC),
+                                decorationColor: Theme.of(
+                                  context,
+                                ).colorScheme.onSurface,
                                 decorationThickness: 1.5,
                               )
                             : Theme.of(context).textTheme.bodyMedium,
                       ),
-                      widget.item.description != ""
+                      item.description != ""
                           ? Text(
-                              widget.item.description!,
-                              style: isSelected
+                              item.description!,
+                              style: item.isCompleted
                                   ? Theme.of(
                                       context,
                                     ).textTheme.labelMedium?.copyWith(
                                       decoration: TextDecoration.lineThrough,
-                                      decorationColor: Color(0XFFC6C6C6),
+                                      decorationColor: Theme.of(
+                                        context,
+                                      ).colorScheme.secondary,
                                       decorationThickness: 1.5,
                                     )
                                   : Theme.of(context).textTheme.labelMedium,
@@ -81,27 +76,9 @@ class _TaskItemState extends State<TaskItem> {
               ],
             ),
           ),
-          Icon(Icons.more_vert, color: Color(0XFFC6C6C6)),
+          Icon(Icons.more_vert, color: Theme.of(context).colorScheme.onSurface),
         ],
       ),
     );
-  }
-
-  Future<void> _updateTaskState() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    final List<TaskModel> items =
-        prefs
-            .getStringList(Constant.userTasks)
-            ?.map((e) => TaskModel.fromJson(jsonDecode(e)))
-            .toList() ??
-        [];
-    for (var i in items) {
-      if (i.id == widget.item.id) {
-        i.isCompleted = isSelected;
-        break;
-      }
-    }
-    List<String> strList = items.map((e) => jsonEncode(e.toJson())).toList();
-    await prefs.setStringList(Constant.userTasks, strList);
   }
 }
