@@ -27,7 +27,7 @@ class _TaskItemState extends State<TaskItem> {
       padding: EdgeInsets.symmetric(vertical: 11, horizontal: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: Color(0XFF282828),
+        color: Theme.of(context).colorScheme.primaryContainer,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
