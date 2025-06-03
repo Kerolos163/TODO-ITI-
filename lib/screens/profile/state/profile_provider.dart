@@ -1,3 +1,4 @@
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -9,10 +10,14 @@ import 'package:to_do/constants/preferences_manager.dart';
 class ProfileProvider extends ChangeNotifier {
   String? profileImage;
   String? name;
+  String? quote;
 
-  void getInfo() async {
+  Future<void> getInfo() async {
     profileImage = PreferencesManager.getString(Constant.userImage);
     name = PreferencesManager.getString(Constant.nameKey);
+    quote = PreferencesManager.getString(Constant.quoteKey);
+    log('quote: $quote');
+    notifyListeners();
   }
 
   void saveImage(XFile file) async {

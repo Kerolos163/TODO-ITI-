@@ -21,7 +21,7 @@ class ProfileItem extends StatelessWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadiusGeometry.circular(10),
       ),
-      contentPadding: EdgeInsets.zero,
+      contentPadding: EdgeInsets.symmetric(horizontal: 4),
       title: Text(title, style: Theme.of(context).textTheme.bodyMedium),
       leading: CustomSvgPicture(path: path, withColorFilter: true),
       trailing: trailing,

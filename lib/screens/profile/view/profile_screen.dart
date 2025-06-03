@@ -1,11 +1,11 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
 import 'package:to_do/constants/assets.dart';
 import 'package:to_do/constants/constant.dart';
 import 'package:to_do/constants/preferences_manager.dart';
+import 'package:to_do/screens/UserDetails/View/user_details.dart';
 import 'package:to_do/screens/get_start_screen.dart';
 import 'package:to_do/screens/profile/state/profile_provider.dart';
 import 'package:to_do/screens/profile/view/widget/profile_item.dart';
@@ -79,9 +79,14 @@ class ProfileScreen extends StatelessWidget {
                       },
                     ),
                     SizedBox(height: 4),
-                    Text(
-                      "One task at a time. One step closer.",
-                      style: Theme.of(context).textTheme.labelSmall,
+                    Selector<ProfileProvider, String?>(
+                      selector: (_, myType) => myType.quote,
+                      builder: (context, quote, child) {
+                        return Text(
+                          quote ?? "One task at a time. One step closer.",
+                          style: Theme.of(context).textTheme.labelSmall,
+                        );
+                      },
                     ),
                     SizedBox(height: 24),
                   ],
@@ -92,10 +97,23 @@ class ProfileScreen extends StatelessWidget {
                 style: Theme.of(context).textTheme.titleMedium,
               ),
               SizedBox(height: 8),
-              ProfileItem(
-                path: Assets.assetsImgsProfileIcon,
-                title: "User Details",
-                trailing: Icon(Icons.arrow_forward),
+              Consumer<ProfileProvider>(
+                builder: (context, profileProvider, child) {
+                  return ProfileItem(
+                    path: Assets.assetsImgsProfileIcon,
+                    title: "User Details",
+                    trailing: Icon(Icons.arrow_forward),
+                    onTap: () async {
+                      final changedInfo = await Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => UserDetails()),
+                      );
+                      if (changedInfo != null && changedInfo) {
+                        await profileProvider.getInfo();
+                      }
+                    },
+                  );
+                },
               ),
               Divider(color: Theme.of(context).colorScheme.secondary),
               ProfileItem(
