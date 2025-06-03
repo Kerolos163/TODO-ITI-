@@ -37,9 +37,11 @@ class UserDetails extends StatelessWidget {
                     ),
                   ),
                   ElevatedButton(
-                    onPressed: () async{
-                   await   userDetailsProvider.saveUserInfo();
-                      Navigator.pop(context, true);
+                    onPressed: () async {
+                      await userDetailsProvider.saveUserInfo();
+                      if (context.mounted) {
+                        Navigator.pop(context, true);
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       fixedSize: Size(MediaQuery.of(context).size.width, 40),
