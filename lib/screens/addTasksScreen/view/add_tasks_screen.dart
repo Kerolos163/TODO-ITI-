@@ -113,7 +113,7 @@ class _AddTasksScreenState extends State<AddTasksScreen> {
                         'Add Task',
                         style: Theme.of(
                           context,
-                        ).textTheme.bodyMedium?.copyWith(fontSize: 18),
+                        ).textTheme.displayMedium?.copyWith(fontSize: 18),
                       ),
                       icon: Icon(Icons.add),
                     );
