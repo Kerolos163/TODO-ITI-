@@ -23,6 +23,7 @@ class CompletedScreen extends StatelessWidget {
                     padding: EdgeInsets.all(16),
                     shrinkWrap: true,
                     itemBuilder: (BuildContext context, int index) => TaskItem(
+                      getData: () => completedProvider.getCompletedTasks(),
                       item: completedProvider.completedItem![index],
                       onChanged: (value) {
                         completedProvider.updateStateTasks(

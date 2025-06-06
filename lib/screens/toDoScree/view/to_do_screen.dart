@@ -23,6 +23,7 @@ class ToDOScreen extends StatelessWidget {
                     padding: EdgeInsets.all(16),
                     shrinkWrap: true,
                     itemBuilder: (BuildContext context, int index) => TaskItem(
+                      getData: () => toDoProvider.getToDoTasks(),
                       item: toDoProvider.toDoItem![index],
                       onChanged: (value) {
                         toDoProvider.updateStateTasks(
