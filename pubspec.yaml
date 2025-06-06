@@ -37,6 +37,7 @@ dependencies:
   shared_preferences: ^2.5.3
   path_provider: ^2.1.5
   flutter_native_splash: ^2.4.6
+  flutter_launcher_icons: ^0.14.3
 
 dev_dependencies:
   flutter_lints: ^5.0.0
@@ -91,3 +92,8 @@ flutter_native_splash:
   ios: true
   color_dark: "#000000"
   image_dark: asset/imgs/splashLogo.png
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "asset/imgs/splashLogo.png"
