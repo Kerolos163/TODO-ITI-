@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
+import 'package:to_do/state/app_provider.dart';
 import '../../../constants/assets.dart';
 import '../../addTasksScreen/view/add_tasks_screen.dart';
 import 'widget/achieved_task_container.dart';
@@ -31,7 +32,16 @@ class MyTasksScreen extends StatelessWidget {
               borderRadius: BorderRadiusGeometry.circular(50),
             ),
             backgroundColor: Color(0xFF15B86C),
-            icon: Icon(Icons.add, color: Colors.white),
+            icon: Consumer<AppProvider>(
+              builder: (context, appProvider, child) {
+                return Icon(
+                  Icons.add,
+                  color: appProvider.darkMode
+                      ? Color(0xFF161F1B)
+                      : Color(0XFFFFFCFC),
+                );
+              },
+            ),
             label: Text(
               'Add New Task',
               style: Theme.of(context).textTheme.headlineMedium,

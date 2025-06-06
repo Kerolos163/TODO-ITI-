@@ -35,7 +35,7 @@ class _GetStartScreenState extends State<GetStartScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsetsGeometry.symmetric(horizontal: 16),
+          padding: EdgeInsetsGeometry.symmetric(horizontal: 16, vertical: 4),
           child: Form(
             key: _formKey,
             child: ListView(

@@ -46,45 +46,51 @@ class _AddTasksScreenState extends State<AddTasksScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CustomTextFormField(
-                  title: "Task Name",
-                  hintText: "Finish UI design for login screen",
-                  controllerl: taskNameController,
-                  validator: (value) {
-                    if (value.isNullString) {
-                      return 'Please enter Task Name';
-                    }
-                    return null;
-                  },
+                Expanded(
+                  child: ListView(
+                    children: [
+                      CustomTextFormField(
+                        title: "Task Name",
+                        hintText: "Finish UI design for login screen",
+                        controllerl: taskNameController,
+                        validator: (value) {
+                          if (value.isNullString) {
+                            return 'Please enter Task Name';
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 20),
+                      CustomTextFormField(
+                        title: "Task Description",
+                        hintText:
+                            "Finish onboarding UI and hand off to devs by Thursday.",
+                        controllerl: taskDescriptionController,
+                        maxLines: 5,
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            "High Priority",
+                            style: Theme.of(context).textTheme.bodyMedium,
+                          ),
+                          Consumer<AddTasksProvider>(
+                            builder: (context, addTasksProvider, child) {
+                              return Switch(
+                                value: addTasksProvider.switchValue,
+                                onChanged: (value) => addTasksProvider
+                                    .changeSwitchValue(newValue: value),
+                              );
+                            },
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
-                SizedBox(height: 20),
-                CustomTextFormField(
-                  title: "Task Description",
-                  hintText:
-                      "Finish onboarding UI and hand off to devs by Thursday.",
-                  controllerl: taskDescriptionController,
-                  maxLines: 5,
-                ),
-                SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      "High Priority",
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                    Consumer<AddTasksProvider>(
-                      builder: (context, addTasksProvider, child) {
-                        return Switch(
-                          value: addTasksProvider.switchValue,
-                          onChanged: (value) => addTasksProvider
-                              .changeSwitchValue(newValue: value),
-                        );
-                      },
-                    ),
-                  ],
-                ),
-                Spacer(),
+
                 Consumer<AddTasksProvider>(
                   builder: (context, addTasksProvider, child) {
                     return ElevatedButton.icon(

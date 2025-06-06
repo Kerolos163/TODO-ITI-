@@ -72,7 +72,7 @@ ThemeData darkTheme = ThemeData(
     bodyLarge: TextStyle(fontSize: 24, color: Color(0XFFFFFCFC)),
     bodyMedium: TextStyle(fontSize: 16, color: Color(0XFFFFFCFC)),
     displayMedium: TextStyle(fontSize: 16, color: Color(0xFF161F1B)),
-    headlineMedium: TextStyle(fontSize: 18, color: Color(0XFFFFFCFC)),
+    headlineMedium: TextStyle(fontSize: 18, color: Color(0xFF161F1B)),
     labelMedium: TextStyle(
       fontSize: 14,
       color: Color(0XFFC6C6C6),

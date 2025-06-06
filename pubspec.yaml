@@ -36,6 +36,7 @@ dependencies:
   provider: ^6.1.5
   shared_preferences: ^2.5.3
   path_provider: ^2.1.5
+  flutter_native_splash: ^2.4.6
 
 dev_dependencies:
   flutter_lints: ^5.0.0
@@ -82,3 +83,11 @@ flutter_assets:
   assets_path: asset/imgs/
   output_path: lib/constants/
   filename: assets.dart
+
+flutter_native_splash:
+  color: "#ffffff"
+  image: asset/imgs/splashLogo.png
+  android: true
+  ios: true
+  color_dark: "#000000"
+  image_dark: asset/imgs/splashLogo.png
