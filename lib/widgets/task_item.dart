@@ -194,6 +194,7 @@ class TaskItem extends StatelessWidget {
                             items[i].description = taskDescriptionController
                                 .text
                                 .trim();
+                            items[i].isHighPriority = isHighPriority;
                             newValue = true;
                             break;
                           }
