@@ -40,4 +40,19 @@ class ToDoProvider extends ChangeNotifier {
     await PreferencesManager.setStringList(Constant.userTasks, strList);
     getToDoTasks();
   }
+
+  void deleteTask({required int taskID}) async {
+    final List<TaskModel> items =
+        PreferencesManager.getStringList(
+          Constant.userTasks,
+        )?.map((e) => TaskModel.fromJson(jsonDecode(e))).toList() ??
+        [];
+
+    final List<TaskModel> newList = items
+        .where((element) => element.id != taskID)
+        .toList();
+    List<String> strList = newList.map((e) => jsonEncode(e.toJson())).toList();
+    await PreferencesManager.setStringList(Constant.userTasks, strList);
+    getToDoTasks();
+  }
 }

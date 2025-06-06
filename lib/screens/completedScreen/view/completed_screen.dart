@@ -9,7 +9,7 @@ class CompletedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<CompletedProvider>(
-      create: (context) => CompletedProvider()..getToDoTasks(),
+      create: (context) => CompletedProvider()..getCompletedTasks(),
       child: Scaffold(
         appBar: AppBar(
           title: Text("Completed Tasks"),
@@ -28,6 +28,12 @@ class CompletedScreen extends StatelessWidget {
                         completedProvider.updateStateTasks(
                           taskID: completedProvider.completedItem![index].id,
                         );
+                      },
+                      deleteBTN: () {
+                        completedProvider.deleteTask(
+                          taskID: completedProvider.completedItem![index].id,
+                        );
+                        Navigator.pop(context);
                       },
                     ),
                     separatorBuilder: (context, index) => SizedBox(height: 8),

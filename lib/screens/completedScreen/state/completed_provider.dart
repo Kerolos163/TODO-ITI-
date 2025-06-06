@@ -6,13 +6,12 @@ import 'package:to_do/constants/preferences_manager.dart';
 import 'package:to_do/models/task_model.dart';
 
 class CompletedProvider extends ChangeNotifier {
-    late List<TaskModel>? completedItem = [];
-    Future<void> getToDoTasks() async {
+  late List<TaskModel>? completedItem = [];
+  Future<void> getCompletedTasks() async {
     final List<TaskModel> items =
-        PreferencesManager
-            .getStringList(Constant.userTasks)
-            ?.map((e) => TaskModel.fromJson(jsonDecode(e)))
-            .toList() ??
+        PreferencesManager.getStringList(
+          Constant.userTasks,
+        )?.map((e) => TaskModel.fromJson(jsonDecode(e))).toList() ??
         [];
 
     completedItem = items.where((e) => e.isCompleted).toList();
@@ -21,10 +20,9 @@ class CompletedProvider extends ChangeNotifier {
 
   Future<void> updateStateTasks({required int taskID}) async {
     final List<TaskModel> items =
-        PreferencesManager
-            .getStringList(Constant.userTasks)
-            ?.map((e) => TaskModel.fromJson(jsonDecode(e)))
-            .toList() ??
+        PreferencesManager.getStringList(
+          Constant.userTasks,
+        )?.map((e) => TaskModel.fromJson(jsonDecode(e))).toList() ??
         [];
     for (var i in items) {
       if (i.id == taskID) {
@@ -35,6 +33,21 @@ class CompletedProvider extends ChangeNotifier {
 
     List<String> strList = items.map((e) => jsonEncode(e.toJson())).toList();
     await PreferencesManager.setStringList(Constant.userTasks, strList);
-    getToDoTasks();
+    getCompletedTasks();
+  }
+
+  void deleteTask({required int taskID}) async {
+    final List<TaskModel> items =
+        PreferencesManager.getStringList(
+          Constant.userTasks,
+        )?.map((e) => TaskModel.fromJson(jsonDecode(e))).toList() ??
+        [];
+
+    final List<TaskModel> newList = items
+        .where((element) => element.id != taskID)
+        .toList();
+    List<String> strList = newList.map((e) => jsonEncode(e.toJson())).toList();
+    await PreferencesManager.setStringList(Constant.userTasks, strList);
+    getCompletedTasks();
   }
 }

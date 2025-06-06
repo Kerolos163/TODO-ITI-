@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:to_do/screens/addTasksScreen/state/add_tasks_provider.dart';
 import 'package:to_do/screens/layout_screen.dart';
+import 'package:to_do/state/app_provider.dart';
 import 'package:to_do/widgets/form_field_with_label.dart';
 import 'package:to_do/constants/extensions.dart';
 
@@ -115,7 +116,16 @@ class _AddTasksScreenState extends State<AddTasksScreen> {
                           context,
                         ).textTheme.displayMedium?.copyWith(fontSize: 18),
                       ),
-                      icon: Icon(Icons.add),
+                      icon: Consumer<AppProvider>(
+                        builder: (context, appProvider, child) {
+                          return Icon(
+                            Icons.add,
+                            color: appProvider.darkMode
+                                ? Color(0xFF161F1B)
+                                : Color(0XFFFFFCFC),
+                          );
+                        },
+                      ),
                     );
                   },
                 ),

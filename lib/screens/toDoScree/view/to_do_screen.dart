@@ -29,6 +29,12 @@ class ToDOScreen extends StatelessWidget {
                           taskID: toDoProvider.toDoItem![index].id,
                         );
                       },
+                      deleteBTN: () {
+                        toDoProvider.deleteTask(
+                          taskID: toDoProvider.toDoItem![index].id,
+                        );
+                        Navigator.pop(context);
+                      },
                     ),
                     separatorBuilder: (context, index) => SizedBox(height: 8),
                     itemCount: toDoProvider.toDoItem!.length,
