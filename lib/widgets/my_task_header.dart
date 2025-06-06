@@ -1,9 +1,9 @@
 import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:to_do/constants/assets.dart';
-import 'package:to_do/constants/constant.dart';
-import 'package:to_do/widgets/custom_svg_picture.dart';
+import '../constants/assets.dart';
+import '../constants/constant.dart';
+import 'custom_svg_picture.dart';
 
 class MyTaskHeader extends StatefulWidget {
   const MyTaskHeader({super.key});

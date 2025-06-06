@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/constants/constant.dart';
-import 'package:to_do/constants/preferences_manager.dart';
+import '../../../constants/constant.dart';
+import '../../../constants/preferences_manager.dart';
 
 class UserDetailsProvider extends ChangeNotifier {
   late TextEditingController nameController;

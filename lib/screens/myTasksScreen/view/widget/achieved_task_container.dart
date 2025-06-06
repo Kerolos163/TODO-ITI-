@@ -2,7 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:to_do/screens/myTasksScreen/state/my_tasks_provider.dart';
+
+import '../../state/my_tasks_provider.dart';
 
 class AchievedTaskContainer extends StatelessWidget {
   const AchievedTaskContainer({super.key});

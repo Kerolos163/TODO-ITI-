@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:to_do/constants/constant.dart';
-import 'package:to_do/constants/preferences_manager.dart';
-import 'package:to_do/models/task_model.dart';
+import '../../../constants/constant.dart';
+import '../../../constants/preferences_manager.dart';
+import '../../../models/task_model.dart';
 
 class CompletedProvider extends ChangeNotifier {
   late List<TaskModel>? completedItem = [];

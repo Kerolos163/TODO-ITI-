@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/models/task_model.dart';
-import 'package:to_do/screens/myTasksScreen/view/widget/task_item.dart';
+import '../../../../models/task_model.dart';
+import 'task_item.dart';
 
 class TaskBuilder extends StatelessWidget {
   const TaskBuilder({super.key, required this.items});

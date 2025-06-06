@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:to_do/screens/UserDetails/State/user_details_provider.dart';
-import 'package:to_do/widgets/form_field_with_label.dart';
+import '../State/user_details_provider.dart';
+import '../../../widgets/form_field_with_label.dart';
 
 class UserDetails extends StatelessWidget {
   const UserDetails({super.key});

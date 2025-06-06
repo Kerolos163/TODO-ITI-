@@ -3,7 +3,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:to_do/constants/preferences_manager.dart';
+import '../../../constants/preferences_manager.dart';
 
 import '../../../constants/constant.dart' show Constant;
 import '../../../models/task_model.dart' show TaskModel;
@@ -72,6 +72,21 @@ class MyTasksProvider extends ChangeNotifier {
       }
     }
     List<String> strList = items.map((e) => jsonEncode(e.toJson())).toList();
+    await PreferencesManager.setStringList(Constant.userTasks, strList);
+    getLocalData();
+  }
+
+  void deleteTask({required int taskID}) async {
+    final List<TaskModel> items =
+        PreferencesManager.getStringList(
+          Constant.userTasks,
+        )?.map((e) => TaskModel.fromJson(jsonDecode(e))).toList() ??
+        [];
+
+    final List<TaskModel> newList = items
+        .where((element) => element.id != taskID)
+        .toList();
+    List<String> strList = newList.map((e) => jsonEncode(e.toJson())).toList();
     await PreferencesManager.setStringList(Constant.userTasks, strList);
     getLocalData();
   }

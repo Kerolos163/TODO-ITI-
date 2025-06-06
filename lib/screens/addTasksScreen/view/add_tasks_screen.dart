@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:to_do/screens/addTasksScreen/state/add_tasks_provider.dart';
-import 'package:to_do/screens/layout_screen.dart';
-import 'package:to_do/state/app_provider.dart';
-import 'package:to_do/widgets/form_field_with_label.dart';
-import 'package:to_do/constants/extensions.dart';
+import '../state/add_tasks_provider.dart';
+import '../../layout_screen.dart';
+import '../../../state/app_provider.dart';
+import '../../../widgets/form_field_with_label.dart';
+import '../../../constants/extensions.dart';
 
 class AddTasksScreen extends StatefulWidget {
   const AddTasksScreen({super.key});

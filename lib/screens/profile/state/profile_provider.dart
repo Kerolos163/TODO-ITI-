@@ -4,8 +4,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:to_do/constants/constant.dart';
-import 'package:to_do/constants/preferences_manager.dart';
+import '../../../constants/constant.dart';
+import '../../../constants/preferences_manager.dart';
 
 class ProfileProvider extends ChangeNotifier {
   String? profileImage;

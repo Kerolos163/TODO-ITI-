@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:to_do/constants/constant.dart';
-import 'package:to_do/constants/preferences_manager.dart';
-import 'package:to_do/constants/theme/dark_theme.dart';
-import 'package:to_do/constants/theme/light_theme.dart';
-import 'package:to_do/screens/get_start_screen.dart';
-import 'package:to_do/screens/layout_screen.dart';
-import 'package:to_do/state/app_provider.dart';
+import 'constants/constant.dart';
+import 'constants/preferences_manager.dart';
+import 'constants/theme/dark_theme.dart';
+import 'constants/theme/light_theme.dart';
+import 'screens/get_start_screen.dart';
+import 'screens/layout_screen.dart';
+import 'state/app_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

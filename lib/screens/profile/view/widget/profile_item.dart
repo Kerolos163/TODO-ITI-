@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:to_do/widgets/custom_svg_picture.dart';
+
+import '../../../../widgets/custom_svg_picture.dart';
 
 class ProfileItem extends StatelessWidget {
   const ProfileItem({

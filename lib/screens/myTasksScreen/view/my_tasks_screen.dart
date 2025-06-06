@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
-import 'package:to_do/constants/assets.dart';
-import 'package:to_do/screens/addTasksScreen/view/add_tasks_screen.dart';
-import 'package:to_do/screens/myTasksScreen/view/widget/achieved_task_container.dart';
-import 'package:to_do/screens/myTasksScreen/view/widget/high_priority_tasks_widget.dart';
+import '../../../constants/assets.dart';
+import '../../addTasksScreen/view/add_tasks_screen.dart';
+import 'widget/achieved_task_container.dart';
+import 'widget/high_priority_tasks_widget.dart';
 
-import 'package:to_do/widgets/my_task_header.dart';
-import 'package:to_do/screens/myTasksScreen/view/widget/tasks_builder.dart';
+import '../../../widgets/my_task_header.dart';
+import 'widget/tasks_builder.dart';
 
 import '../../../models/task_model.dart';
 import '../state/my_tasks_provider.dart' show MyTasksProvider;

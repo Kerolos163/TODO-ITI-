@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:to_do/constants/assets.dart';
-import 'package:to_do/constants/constant.dart';
-import 'package:to_do/constants/extensions.dart';
-import 'package:to_do/screens/layout_screen.dart';
-import 'package:to_do/widgets/custom_svg_picture.dart';
-import 'package:to_do/widgets/form_field_with_label.dart';
+import '../constants/assets.dart';
+import '../constants/constant.dart';
+import '../constants/extensions.dart';
+import 'layout_screen.dart';
+import '../widgets/custom_svg_picture.dart';
+import '../widgets/form_field_with_label.dart';
 
 class GetStartScreen extends StatefulWidget {
   const GetStartScreen({super.key});

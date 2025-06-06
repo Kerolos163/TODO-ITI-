@@ -1,15 +1,15 @@
 import 'dart:convert';
 import 'dart:developer';
 import 'package:provider/provider.dart';
-import 'package:to_do/constants/constant.dart';
-import 'package:to_do/constants/preferences_manager.dart';
-import 'package:to_do/state/app_provider.dart';
+import '../constants/constant.dart';
+import '../constants/preferences_manager.dart';
+import '../state/app_provider.dart';
 
 import '../constants/extensions.dart';
 import 'package:flutter/material.dart';
-import 'package:to_do/constants/task_item_action_enum.dart';
-import 'package:to_do/models/task_model.dart';
-import 'package:to_do/widgets/form_field_with_label.dart';
+import '../constants/task_item_action_enum.dart';
+import '../models/task_model.dart';
+import 'form_field_with_label.dart';
 
 class TaskItem extends StatelessWidget {
   const TaskItem({

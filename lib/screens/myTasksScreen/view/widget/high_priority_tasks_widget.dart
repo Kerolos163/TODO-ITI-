@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:to_do/constants/assets.dart';
-import 'package:to_do/screens/myTasksScreen/state/my_tasks_provider.dart';
-import 'package:to_do/widgets/custom_svg_picture.dart';
+import '../../../../constants/assets.dart';
+import '../../state/my_tasks_provider.dart';
+import '../../../../widgets/custom_svg_picture.dart';
 
 class HighPriorityTasksWidget extends StatelessWidget {
   const HighPriorityTasksWidget({super.key});

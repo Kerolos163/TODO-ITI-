@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:to_do/screens/completedScreen/state/completed_provider.dart';
-import 'package:to_do/widgets/task_item.dart';
+import '../state/completed_provider.dart';
+import '../../../widgets/task_item.dart';
 
 class CompletedScreen extends StatelessWidget {
   const CompletedScreen({super.key});

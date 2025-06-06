@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:to_do/screens/toDoScree/state/to_do_provider.dart';
-import 'package:to_do/widgets/task_item.dart';
+import '../state/to_do_provider.dart';
+import '../../../widgets/task_item.dart';
 
 class ToDOScreen extends StatelessWidget {
   const ToDOScreen({super.key});

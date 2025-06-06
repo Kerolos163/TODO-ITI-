@@ -2,14 +2,14 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-import 'package:to_do/constants/assets.dart';
-import 'package:to_do/constants/constant.dart';
-import 'package:to_do/constants/preferences_manager.dart';
-import 'package:to_do/screens/UserDetails/View/user_details.dart';
-import 'package:to_do/screens/get_start_screen.dart';
-import 'package:to_do/screens/profile/state/profile_provider.dart';
-import 'package:to_do/screens/profile/view/widget/profile_item.dart';
-import 'package:to_do/state/app_provider.dart';
+import '../../../constants/assets.dart';
+import '../../../constants/constant.dart';
+import '../../../constants/preferences_manager.dart';
+import '../../UserDetails/View/user_details.dart';
+import '../../get_start_screen.dart';
+import '../state/profile_provider.dart';
+import 'widget/profile_item.dart';
+import '../../../state/app_provider.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
