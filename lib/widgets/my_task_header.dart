@@ -1,6 +1,7 @@
 import 'dart:developer';
+import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:to_do/constants/preferences_manager.dart';
 import '../constants/assets.dart';
 import '../constants/constant.dart';
 import 'custom_svg_picture.dart';
@@ -14,9 +15,12 @@ class MyTaskHeader extends StatefulWidget {
 
 class _MyTaskHeaderState extends State<MyTaskHeader> {
   String? userName;
+  String? userQuote;
+  String? userImage;
   @override
   void initState() {
     _getUserName();
+    log("Wesso");
     super.initState();
   }
 
@@ -29,7 +33,12 @@ class _MyTaskHeaderState extends State<MyTaskHeader> {
         Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image.asset(Assets.assetsImgsImageThumbnail),
+            userImage != null
+                ? CircleAvatar(
+                    foregroundImage: FileImage(File(userImage!)),
+                    radius: 25,
+                  )
+                : Image.asset(Assets.assetsImgsImageThumbnail),
             SizedBox(width: 8),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +50,7 @@ class _MyTaskHeaderState extends State<MyTaskHeader> {
                 ),
                 SizedBox(height: 2),
                 Text(
-                  "One task at a time.One step\n closer.",
+                  userQuote ?? "One task at a time.One step\n closer.",
                   style: Theme.of(context).textTheme.labelMedium,
                 ),
               ],
@@ -57,8 +66,9 @@ class _MyTaskHeaderState extends State<MyTaskHeader> {
   }
 
   void _getUserName() async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    userName = prefs.getString(Constant.nameKey);
+    userName = PreferencesManager.getString(Constant.nameKey);
+    userQuote = PreferencesManager.getString(Constant.quoteKey);
+    userImage = PreferencesManager.getString(Constant.userImage);
     log(userName ?? "Null");
     setState(() {});
   }
